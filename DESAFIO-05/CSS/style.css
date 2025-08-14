@@ -1,0 +1,272 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    /* background-color: #222; */
+    background-image: url(../images/wallpaper.png);
+    background-size: cover;
+    color: #fff;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Andada Pro", serif;
+}
+
+p, button{
+    font-family: 'Archivo', sans-serif;
+}
+
+.header{
+    width: 80%;
+    height: 176px;
+    /* border: 1px solid; */
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all ease .5s;
+}
+
+
+.header .material-symbols-outlined{
+    display: none;
+}
+
+.header .nav-links{
+    display: flex;
+    gap: 24px;
+}
+
+.header .nav-links .link{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f8f8f850;
+    border: 1px solid #f8f8f8;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease .5s;
+}
+
+.header .nav-links .link:hover{
+    background-color: #F1A5B1;
+}
+
+main{
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid yellow; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid green; */
+
+    display: flex;
+}
+
+.descricao{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.descricao h2{
+    font-size: 64px;
+    line-height: 70px;
+    margin-bottom: 32px;
+}
+
+.descricao h3{
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 24px;
+}
+
+.descricao p{
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 32px;
+
+}
+
+.botoes{
+    width: 100%;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+    gap: 24px;
+}
+
+.botao{
+    width: 240px;
+    height: 52px;
+    border: 1px solid #F1A5B1;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 4px;
+    padding: 14px 32px;
+    gap: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    transition: ease .5s;
+}
+
+.primario:hover, .secundario:hover{
+    background-color: #f8f8f8;
+    color: #0b0a0a;
+    border-color: transparent;
+}
+
+.primario{
+    background-color: #F1A5B1;
+    color: #0b0a0a;
+}
+
+.ilustracao{
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/image.svg");
+    background-repeat: no-repeat;
+    /* border: 1px solid red; */
+    background-size: cover;
+}
+
+/*RESPONSIVIDADE*/
+@media(max-width: 1200px){
+    body{
+        width: 100%;
+        height: 100%;
+        padding-inline: 5%;
+        margin-bottom: 20px;
+    }
+
+    .ilustracao{
+        order: 1;
+        height: 424px;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .conteudo{
+        flex-direction: column;
+    }
+
+    .descricao{
+        order: 2;
+    }
+}
+
+@media(max-width: 768px){
+    
+    .header{
+        width: 100%;
+        height: 128px;
+    }
+
+    .header .logo{
+        height: 64px;
+    }
+
+    .ilustracao{
+        height: 240px;
+    }
+
+    .descricao h3{
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 700;
+    }
+
+    .descricao h2{
+        font-size: 40px;
+        line-height: 44px;
+        font-weight: 800;
+        width: 270px;
+        }
+
+    .descricao p{
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+
+    .botoes{
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .botao{
+        width: 100%;
+    }
+}
+
+@media(max-width: 500px){
+    .header{
+        justify-content: space-between;
+    }
+    .header .nav-links{
+        display: none;
+    }
+
+    .header .material-symbols-outlined{
+        display: block;
+        font-size: 30px;
+    }
+
+    .header .nav-links{
+        position: fixed;
+        right: 0;
+        top: 100%;
+        width: 100%;
+        padding: .5rem 4%;
+        background-color: rgba(255, 255, 255, .1);
+    }
+
+    .header .nav-links.active{
+        display: block;
+    }
+    .header .nav-links .link{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 390px){
+    .header{
+        height: 96px;
+    }
+
+    .header .logo{
+        height: 48px;
+    }
+
+    .ilustracao{
+        height: 184px;
+    }
+}
