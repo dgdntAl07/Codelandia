@@ -1,121 +1,415 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    width: 100%;
-    height: 700px;
+:root {
+    --brand-color: #BF91F9;
+    --white: #ffffff;
+    --dark-10: #0B0B0B;
+    --dark-20: #0E0E0E;
+    --dark-30: #151515;
 }
 
-h1, h2, h3, h4, h5, h6{
-    color: #BF91F9;
-}
+a {
+    width: auto;
+    height: 22px;
+    font-size: 18px;
+    font-weight: 500;
 
-p{
-    color: #fff;
-}
-
-.page{
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
     text-decoration: none;
-    font-size: 18x;
-    font-weight: 800;
-    padding: 20px;
-    color: #fff;
 }
 
-.logo{
-    color: #BF91F9;
-    font-size: 24px;
-    font-weight: 800;
-    /* margin-left: 352px; */
-    text-decoration: none;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header{
-    flex-flow: row;
-    height: 91px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 352px;
-    border: 1px solid #151515;
-    background: radial-gradient(rgba(21, 21, 21, 1) 17%, rgba(11, 11, 11, 1) 77%);
-    /* background-color: #151515; */
-    /* background: rgba(255, 255, 255, 0); */
-}
-
-.navbar{
-    margin-right: 32px;
-    gap: 24px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.container{
-    display: flex;
-    position: relative;
-}
-
-.seta{
-    display: flex;
-    position: relative;
-    bottom: 50px;
-    left: 12px;
-}
-
-.titulo-chapeu{
-    color: #fff;
-}
-
-.cafe{
-    color: #BF91F9;
-    display: flex;
-    position: relative;
-    bottom: 60px;
-    left: 20px;
-    font-weight: 700;
-    font-size: 24px;
-    font-family: 'Ital', initial;
-}
-
-.principal{
+body {
     width: 100%;
     height: 100%;
-    background: #151515;
-    background: radial-gradient(circle, rgba(21, 21, 21, 1) 17%, rgba(11, 11, 11, 1) 77%);
-    display: flex;
 
-    align-items: center;
-    justify-content:space-around;
-    transition: all ease .5s;
+    background-color: var(--dark-10);
 }
 
-.botao{
-    background-color: #BF91F9;
-    width: 145px;
-    height: 39px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.container {
+    width: 70%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.ilustracao{
-    /* border: 1px solid yellow; */
-    width: 400px;
-    height: 400px;
+/* Navbar da página */
+header {
+    width: auto;
+    height: 91px;
+    
+    display: flex;
+    flex-direction: row;
+}
 
-    position: relative;
-    bottom: 80px;
+.topo {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 24px;
+    vertical-align: middle;
+
+    color: var(--brand-color);
+}
+
+.navbar {
+    display: flex;
+    gap: 56px;
+}
+
+hr {
+    color: var(--dark-30);
+}
+
+/* Sessão Início */
+.inicio {
+    width: auto;
+    height: 609px;
+
+    display: flex;
+    align-items: center;
+}
+
+.apresentacao {
+    width: 70%;
+    margin-top: 140px;
+}
+
+.ilustracao {
+    width: 25rem;
+    height: 25rem;
+
     background-image: url(../images/ola.png);
     background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.titulo-chapeu {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+
+    color: var(--white);
+}
+
+.content {
+    display: flex;
+}
+
+.titulo-chapeu {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.seta {
+    position: relative;
+    bottom: 50px;
+    left: 18px;
+}
+
+.cafe {
+    position: relative;
+    bottom: 58px;
+    left: 30px;
+
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 20px;
+    color: var(--brand-color);
+}
+
+.titulos {
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 48px;
+    vertical-align: middle;
+    color: var(--brand-color);
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+#carreira {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding-block: 36px 40px;
+
+    color: var(--white);
+}
+
+.btn_linked,
+.btn_curriculo {
+    width: auto;
+    height: 39px;
+    padding: 10px 40px;
+    gap: 10px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--brand-color);
+    color: var(--white);
+}
+
+/* Sessão Sobre mim */
+.sobre_mim {
+    width: auto;
+    height: 576px;
+    padding-block: 100px;
+    gap: 18px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     
+}
+
+.titulos {
+    width: auto;
+    height: 58px;
+    
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 32px;
+    color: var(--brand-color);
+}
+
+.cidade {
+    width: auto;
+    height: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--white);
+}
+.pessoal_info {
+    width: auto;
+    height: 96px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    line-height: 160%;
+    color: var(--white);
+}
+
+.redes_icons{
+    width: 100%;
+    height: 24px;
+    display: flex;
+    cursor: pointer;
+    gap: 40px;
+}
+
+
+/* Experiências */
+.experiencias{
+    width: 100%;
+    height: 537px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.titulo_experiencia{
+    color:var(--brand-color);
+}
+
+.my_experience{
+    display: flex;
+}
+
+.locais{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.local{
+    width: 100%;
+    height: 55px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0%; 
+    cursor: pointer;
+    color: var(--white);
+    padding: 12px;
+}
+
+.local:hover,.local:active{
+    border-left: 2px solid var(--brand-color);
+}
+
+.cabecalho{
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+}
+
+.titulo_exp{
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--white);
+}
+
+.date_exp{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 24px;
+    letter-spacing: 0%;
+}
+
+.lc_exp{
+    width: 100%;
+    height: 55px;
+    padding-top: 12px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--brand-color);
+}
+
+.apresentacao_exp{
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 160%;
+    letter-spacing: 0%;
+
+    color: var(--white);
+}
+
+/* Projetos */
+.projetos{
+    width: auto;
+    height: 1330px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.my_projects{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 2rem;
+
+}
+
+.project{
+    width: 100%;  
+}
+
+.img_project{
+    width: 100%;
+    height: 200px;
+
+    border: 1px solid hotpink;
+}
+
+.name_project{
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.infors{
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: var(--white);
+}
+
+.link_project{
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--brand-color);
+}
+
+.botoes{
+    
+}
+
+.btn_acesso_1{
+    width: auto;
+    height: 39px;
+    padding: 10px 40px;
+    gap: 10px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--brand-color);
+    color: var(--white);
+}
+
+.btn_acesso_2{
+    width: auto;
+    height: 39px;
+    padding: 10px 40px;
+    gap: 10px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--brand-color);
+    color: var(--white);
+}
+
+/* Footer */
+footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h3{
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0%;
+
+    color: var(--white);
+}
+
+.simbolo{
+    color: var(--brand-color);
+}

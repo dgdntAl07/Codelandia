@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boa Noite, meu amor 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: radial-gradient(1200px 800px at 70% -10%, #2b2d42 0%, #1e2130 35%, #11131b 100%);
+      --card: rgba(255,255,255,0.06);
+      --text: #f6f7fb;
+      --muted: #c9ccdb;
+      --accent: #ff88aa;
+      --accent-2: #ffd5e1;
+      --glow: 0 0 30px rgba(255,136,170,.25), 0 0 60px rgba(255,136,170,.15);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; display:grid; place-items:center; min-height:100vh;
+      background: var(--bg); color: var(--text); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      overflow:hidden;
+    }
+
+    /* Estrelas de fundo */
+    .stars{position:fixed; inset:0; pointer-events:none;}
+    .star{position:absolute; width:2px; height:2px; background:#fff; opacity:.7; border-radius:50%; filter:drop-shadow(0 0 4px #fff)}
+    @keyframes twinkle { 0%,100%{opacity:.2} 50%{opacity:1} }
+
+    /* Lua */
+    .moon{position:fixed; top:6vh; right:8vw; width:110px; height:110px; border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, #fff 0%, #ffe8a8 35%, #f5c889 60%, #d89a5a 75%, rgba(0,0,0,.0) 76%),
+                 radial-gradient(circle at 30% 30%, transparent 0 76%, rgba(0,0,0,.45) 77% 100%);
+      box-shadow:0 0 40px rgba(255, 240, 180, .35);
+      animation: moonFloat 6s ease-in-out infinite;
+    }
+    @keyframes moonFloat { 0%,100%{ transform:translateY(0) } 50%{ transform:translateY(-10px) } }
+
+    /* Card */
+    .card{
+      position:relative; width:min(720px, 92vw); padding:28px; border-radius:28px;
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+      backdrop-filter: blur(10px); border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      overflow:hidden;
+    }
+    .ribbon{position:absolute; inset:auto -30px auto auto; top:18px; right:-30px; transform:rotate(16deg);
+      background:linear-gradient(90deg, #ff88aa, #ffc7d6); color:#331b24; font-weight:700;
+      padding:8px 18px; border-radius:999px; box-shadow:var(--glow);
+    }
+    h1{
+      margin:0 0 10px; font-size: clamp(28px, 4.5vw, 44px);
+      font-family: "Dancing Script", cursive; font-weight:700; letter-spacing:.5px;
+      text-shadow:0 2px 14px rgba(255, 200, 220,.25);
+    }
+    p.lead{margin:6px 0 18px; color:var(--muted); font-size:clamp(14px, 2.6vw, 18px)}
+
+    .bubble{
+      margin:18px 0 22px; padding:18px 20px; border-radius:18px; line-height:1.55;
+      background:rgba(255,255,255,.06); border:1px dashed rgba(255,255,255,.18);
+      font-size:clamp(15px, 2.8vw, 18px);
+    }
+
+    .actions{display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+    .btn{
+      appearance:none; border:none; cursor:pointer;
+      padding:12px 18px; border-radius:999px; font-weight:700; letter-spacing:.2px;
+      background:linear-gradient(90deg, #ff99bb, #ff6f9f); color:#2a0e18;
+      box-shadow: var(--glow); transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+    }
+    .btn:hover{ transform: translateY(-1px) scale(1.01); filter:saturate(1.15); }
+    .btn-outline{
+      background:transparent; color:var(--text); border:1px solid rgba(255,255,255,.24);
+      box-shadow:none;
+    }
+
+    .footer{
+      display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:18px;
+      color:var(--muted); font-size:13px;
+    }
+
+    /* Corações flutuantes */
+    .hearts{position:fixed; inset:0; pointer-events:none; overflow:hidden}
+    .heart{position:absolute; width:18px; height:18px; transform:translate(-50%, -50%);
+      animation: floatUp linear forwards; opacity:.95;
+      filter: drop-shadow(0 3px 10px rgba(255,120,150,.35));
+    }
+    .heart:before, .heart:after{
+      content:""; position:absolute; width:50%; height:75%; background:var(--accent); border-radius:12px 12px 0 0; top:25%;
+    }
+    .heart:before{ left:0; transform:rotate(-45deg); transform-origin:100% 100%; }
+    .heart:after{ right:0; transform:rotate(45deg); transform-origin:0 100%; }
+
+    @keyframes floatUp{
+      0%{ transform:translate(var(--x), var(--y)) scale(0.8); opacity:0 }
+      10%{ opacity:1 }
+      100%{ transform:translate(var(--x), calc(var(--y) - 160px)) scale(1.25); opacity:0 }
+    }
+
+    /* Citação */
+    .quote{display:flex; align-items:start; gap:12px; margin:10px 0 6px;}
+    .quote svg{flex:0 0 auto; opacity:.9}
+    .quote p{margin:0}
+
+    .signature{font-family:"Dancing Script", cursive; font-size: clamp(20px, 3.4vw, 28px); margin-top:10px}
+
+    /* Campo de nome */
+    .inline-input{display:flex; gap:8px; flex-wrap:wrap; align-items:center; font-size:14px}
+    .inline-input input{
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18); color:var(--text);
+      border-radius:10px; padding:10px 12px; outline:none; width:190px;
+    }
+
+    @media (max-width:480px){
+      .footer{flex-direction:column; align-items:flex-start}
+      .ribbon{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars" aria-hidden="true"></div>
+  <div class="moon" aria-hidden="true" title="Lua bonitinha"></div>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+
+  <main class="card" role="region" aria-label="Cartão de boa noite">
+    <span class="ribbon">boa noite, amor ✨</span>
+    <h1 id="title">Dormir com o coração quentinho 💗</h1>
+    <p class="lead">Que sua noite seja leve, tranquila e cheia de sonhos bonitos. Eu amo você! 😴🌙</p>
+
+    <div class="bubble" id="message">
+      Você ilumina meus dias e acalma minhas noites. Que o silêncio de hoje te abrace com carinho e te traga paz. <strong>Boa noite, meu amor!</strong>
+    </div>
+
+    <div class="quote" id="quote">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M7 7h4v10H5V9a2 2 0 0 1 2-2Zm10 0h4v10h-6V9a2 2 0 0 1 2-2Z" fill="currentColor"/>
+      </svg>
+      <p><em id="dailyLine">“Você é meu lugar favorito do mundo inteiro.”</em></p>
+    </div>
+
+    <div class="signature" id="signature">— Com amor, <span id="yourName">seu bem</span> 💞</div>
+
+    <div class="actions" style="margin-top:16px">
+      <button class="btn" id="btnHearts">Encher de corações</button>
+      <button class="btn btn-outline" id="btnSwap">Trocar mensagem</button>
+      <div class="inline-input" aria-label="Personalizar nome">
+        <label for="name">Assinar como:</label>
+        <input id="name" type="text" placeholder="seu nome" />
+      </div>
+    </div>
+
+    <div class="footer">
+      <span id="date"></span>
+      <span>💤 Dica: toque em “Encher de corações” sempre que sentir saudade</span>
+    </div>
+  </main>
+
+  <script>
+    // Estrelas aleatórias
+    const starField = document.getElementById('stars');
+    const makeStars = (n=120)=>{
+      const frag = document.createDocumentFragment();
+      for(let i=0;i<n;i++){
+        const s = document.createElement('span');
+        s.className = 'star';
+        const x = Math.random()*100, y=Math.random()*100, d=3+Math.random()*5;
+        s.style.left = x + 'vw';
+        s.style.top = y + 'vh';
+        s.style.width = s.style.height = (Math.random()*2+1) + 'px';
+        s.style.animation = `twinkle ${d}s ease-in-out ${Math.random()*d}s infinite`;
+        frag.appendChild(s);
+      }
+      starField.appendChild(frag);
+    }
+    makeStars();
+
+    // Data atual
+    const dateEl = document.getElementById('date');
+    const now = new Date();
+    const pad = (n)=> String(n).padStart(2,'0');
+    const months = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+    dateEl.textContent = `Hoje é ${pad(now.getDate())} de ${months[now.getMonth()]} de ${now.getFullYear()}`;
+
+    // Mensagens fofas
+    const lines = [
+      '“Que os anjinhos cuidem do seu soninho. Eu cuido do seu coração.”',
+      '“Você cabe perfeitamente no abraço que eu mais gosto.”',
+      '“Seu sorriso é meu amanhecer favorito. Até amanhã, meu amor.”',
+      '“Mesmo de olhos fechados, penso em você.”',
+      '“Boa noite! Que os sonhos tragam a gente juntinho.”',
+      '“A distância dorme, o amor fica acordado.”',
+      '“Te amar é o meu descanso preferido.”'
+    ];
+    let idx = 0;
+    const dailyLine = document.getElementById('dailyLine');
+    document.getElementById('btnSwap').addEventListener('click', ()=>{
+      idx = (idx+1)%lines.length;
+      dailyLine.textContent = lines[idx];
+      popHearts(12);
+    });
+
+    // Personalizar assinatura
+    const nameInput = document.getElementById('name');
+    const yourName = document.getElementById('yourName');
+    nameInput.addEventListener('input', (e)=>{
+      const v = (e.target.value||'').trim();
+      yourName.textContent = v.length? v : 'seu bem';
+    });
+
+    // Corações fofos
+    const heartsLayer = document.getElementById('hearts');
+    function makeHeart(x, y, scale=1){
+      const h = document.createElement('span');
+      h.className = 'heart';
+      h.style.setProperty('--x', x+'px');
+      h.style.setProperty('--y', y+'px');
+      h.style.left = x+'px';
+      h.style.top = y+'px';
+      h.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      h.style.opacity = '0';
+      h.style.animationDuration = (1.6 + Math.random()*0.6) + 's';
+      h.style.filter = `hue-rotate(${Math.floor(Math.random()*10)-5}deg)`;
+      heartsLayer.appendChild(h);
+      setTimeout(()=> h.remove(), 2000);
+    }
+    function popHearts(q=20){
+      const rect = document.querySelector('main.card').getBoundingClientRect();
+      for(let i=0;i<q;i++){
+        const x = rect.left + rect.width*(.2+Math.random()*.6);
+        const y = rect.top + rect.height*(.25+Math.random()*.5);
+        makeHeart(x, y, 0.9 + Math.random()*0.6);
+      }
+    }
+    document.getElementById('btnHearts').addEventListener('click', ()=> popHearts(28));
+    // Corações surgem ao carregar
+    setTimeout(()=>popHearts(18), 600);
+
+    // Encher de corações ao clicar em qualquer lugar do card
+    document.querySelector('main.card').addEventListener('click', (e)=>{
+      makeHeart(e.clientX, e.clientY, 1);
+    });
+
+    // Acessibilidade: tecla Enter no botão principal
+    document.getElementById('btnHearts').addEventListener('keyup', (e)=>{
+      if(e.key==='Enter') popHearts(28);
+    });
+  </script>
+</body>
+</html>

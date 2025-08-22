@@ -2,65 +2,162 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Phetsarath:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Preahvihear&display=swap" rel="stylesheet">
+    <!------->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <title>PortMe</title>
 </head>
-<body>
-    <header class="header">
-        <a href="index.html" class="logo">luri Silva</a>
 
-        <nav class="navbar">
-            <a href="#" class="page home">Início</a>
-            <a href="#" class="page sobre">Sobre mim</a>
-            <a href="#" class="page experiencia">Experiências</a>
-            <a href="#" class="page projetos">Projetos</a>
-        </nav>
+<body>
+    <header >
+        <div class="topo container">
+            <h1 class="logo">Diego Dantas</h1>
+            <nav class="navbar">
+                <a href="index.html">início</a>
+                <a href="#">Sobre mim</a>
+                <a href="#">Experiências</a>
+                <a href="#">Projetos</a>
+            </nav>
+        </div>  
     </header>
 
-    <section class="principal">
-        <div class="apresentacao">
-            <div class="container">
-                <h3 class="titulo-chapeu">Olá, eu sou</h3>
-                <div class="seta"><img src="images/Vector.png" alt=""></div>
-                <p class="cafe">Apaixonado por café</p>
-            </div>
-            
-            <h1 class="titulo">luri Silva</h1>
-            
-            
-            <p>Desenvolvedor Frontend & UI Designer.</p>
+    <hr class="container">
 
-            <div class="botao">
-                <botao class="botao">Linkedln</botao>
+    <main class="main container" >
+
+        <section class="inicio">
+            <div class="apresentacao">
+                <div class="content">
+                    <h3 class="titulo-chapeu">Olá, eu sou</h3>
+                    <div class="seta"><img src="images/Vector.png" alt=""></div>
+                    <p class="cafe">Apaixonado por café</p>
+                </div>
+            
+                <h1 class="titulos">Diego Dantas</h1>
+                <p id="carreira">Desenvolvedor Frontend & UI Designer.</p>
+                
+                <div class="botoes">
+                    <button class="botoes btn_linked">Linkedln</button>
+                </div>
+                
+                
             </div>
-        </div>
 
         <div class="ilustracao"></div>
-    </section>
 
-    <!-- <section class="sobre-mim">
-        <h2 class="titulo sobremim">Sobre mim</h2>
-        <h3 class="subtitulo">Guarantã, Brasil</h3>
-        <p class="info">Meu nome é Iuri Silva, ou “iuricode” (é como me chamam agora) sou o criador do eFront, um material de ensino de frontend pela internet. Atualmente sou freelancer como Frontend Developer e UI Designer. Desenvolvo interfaces modernas e de alta qualidade, concentrado em performance, animações, responsividade e SEO.</p>
+        </section>
 
-        <nav class="redes">
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-            <a href="#"></a>
-        </nav>
+        <section class="sobre_mim">
+            <h1 class="titulos">Sobre mim</h1>
+            <h3 class="cidade">Ceará, Brasil</h3>
+            <p class="pessoal_info">Meu nome é Diego Dantas, ou “ddcode” (é como me chamam agora) sou o criador do eFront, um material de ensino de frontend pela internet.
+            Atualmente sou freelancer como Frontend Developer e UI Designer. Desenvolvo interfaces modernas e de alta qualidade, concentrado em performance, animações,
+            responsividade e SEO.</p>
 
-        <div class="botoes">
-            <button class="curriculo">Baixar currículo</button>
-        </div>
-    </section> -->
+            <div class="redes_icons">
+                <img src="images/twitter.png"></img>
+                <img src="images/twitch.png"></img>
+                <img src="images/youtube.png"></img>
+                <img src="images/figma.png"></img>
+                <img src="images/codepen.png"></img>
+                <img src="images/facebook.png"></img>
+                
+            </div>
 
+            <div class="botoes">
+                <button class="botoes btn_curriculo">Baixar currículo</button>
+            </div>
+            
+        </section>
+
+        <section class="experiencias">
+            <h1 class="titulos">Experiências</h1>
+            
+            <div class="my_experience">
+                <div class="locais">
+                    <span class="local">Digital House</span>
+                    <span class="local">Código Fonte TV</span>
+                    <span class="local">Zuplae</span>
+                    <span class="local">ContWeb</span>
+                    <span class="local">CodeLab</span>
+                </div>
+                <div class="descricao_local">
+                    <div class="cabecalho">
+                        <h3 class="titulo_exp">Professor conteudista em Frontend</h3>
+                        <h5 class="date_exp">Nov 2021 - Atual</h5>
+                    </div>
+                    <h4 class="lc_exp">Digital House</h4>
+                    <p class="apresentacao_exp">Trabalhei como instrutor conteudista em frontend na Digital House, o trabalho consistia em criar conteúdos para as aulas de especialização frontend.
+                     Alguns temas dos conteúdos realizados foram: React, Redux, TypeScript, Testes, GraphQL, Next.js, MUI, React Hook Form e styled-components.</p>
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="projects">
+            <h1 class="titulos">Projetos</h1>
+            <div class="my_projects">
+
+                <div class="project">
+                    <div class="img_project">Imagem Projeto</div>
+                    <h3 class="name_project">Nome do projeto</h3>
+                    <p class="infors">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit interdum odio eu varius.</p>
+                    <h4 class="link_project">Tecnologias usadas no projeto</h4>
+
+                    <div class="botoes">
+                        <button class="btn_acesso_1">Acessar o projeto</button>
+                        <button class="btn_acesso_2">Acessar o projeto</button>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="img_project">Imagem Projeto</div>
+                    <h3 class="name_project">Nome do projeto</h3>
+                    <p class="infors">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit interdum odio eu varius.</p>
+                    <h4 class="link_project">Tecnologias usadas no projeto</h4>
+
+                    <div class="botoes">
+                        <button class="btn_acesso_1">Acessar o projeto</button>
+                        <button class="btn_acesso_2">Acessar o projeto</button>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="img_project">Imagem Projeto</div>
+                    <h3 class="name_project">Nome do projeto</h3>
+                    <p class="infors">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit interdum odio eu varius.</p>
+                    <h4 class="link_project">Tecnologias usadas no projeto</h4>
+
+                    <div class="botoes">
+                        <button class="btn_acesso_1">Acessar o projeto</button>
+                        <button class="btn_acesso_2">Acessar o projeto</button>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="img_project">Imagem Projeto</div>
+                    <h3 class="name_project">Nome do projeto</h3>
+                    <p class="infors">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit interdum odio eu varius.</p>
+                    <h4 class="link_project">Tecnologias usadas no projeto</h4>
+
+                    <div class="botoes">
+                        <button class="btn_acesso_1">Acessar o projeto</button>
+                        <button class="btn_acesso_2">Acessar o projeto</button>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
     
+    <footer class="container">
+        <h3>@ 2025 - Diego Dantas</h3>
+        <h3>Powered by <span class="simbolo">{ )</span></h3>
+    </footer>
+
 </body>
 </html>
