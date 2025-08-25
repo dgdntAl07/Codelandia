@@ -18,8 +18,9 @@ body{
 }
 
 .container{
-    width: 70%;
-    margin: auto;
+    max-width: 1400px;
+    width: 1400px;
+    margin: 0 auto;
 }
 
 .top_fixed{
@@ -67,14 +68,14 @@ body{
     line-height: 34px;
 }
 
-main{
+/* main{
     width: auto;
     height: 100%;
 
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .produtos{
     width: 100%;
@@ -105,18 +106,19 @@ main{
 }
 
 .lista__produtos{
-    width: 100%;
+    width: auto;
     height: 100%;
     
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     justify-content: center;
     align-items: center;
     gap: 32px;
 }
 
 .card__produto{
-    width: 384px;
+    max-width: 384px;
+    width: 100%;
     height: 326px;
 }
 

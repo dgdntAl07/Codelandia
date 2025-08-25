@@ -7,6 +7,7 @@
 :root {
     --brand-color: #BF91F9;
     --white: #ffffff;
+    --gray: #7D7D7D;
     --dark-10: #0B0B0B;
     --dark-20: #0E0E0E;
     --dark-30: #151515;
@@ -25,27 +26,32 @@ a {
 
 body {
     width: 100%;
-    height: 100%;
-
+    height: auto;
     background-color: var(--dark-10);
 }
 
-.container {
+.container{
     width: 70%;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
+
+section{
+    margin-block: 200px;
+}
+
 
 /* Navbar da página */
 header {
     width: auto;
     height: 91px;
-    
+
     display: flex;
-    flex-direction: row;
+    border-bottom: 1px solid var(--white);
 }
 
 .topo {
+    width: 100%;
     display: flex;
     text-align: center;
     align-items: center;
@@ -60,27 +66,37 @@ header {
     color: var(--brand-color);
 }
 
-.navbar {
+
+ul {
     display: flex;
     gap: 56px;
+}
+
+a:hover {
+    transition: 0.6s;
+    color: var(--brand-color);
+    cursor: pointer;
 }
 
 hr {
     color: var(--dark-30);
 }
 
+
 /* Sessão Início */
 .inicio {
-    width: auto;
-    height: 609px;
+    width: 100%;
+    height: auto;
 
     display: flex;
+    flex-wrap: wrap-reverse;
     align-items: center;
+    justify-content: space-between;
 }
 
 .apresentacao {
-    width: 70%;
-    margin-top: 140px;
+    width: 50%;
+    margin-top: 14px;
 }
 
 .ilustracao {
@@ -166,19 +182,18 @@ hr {
 .sobre_mim {
     width: auto;
     height: 576px;
-    padding-block: 100px;
     gap: 18px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
 
 .titulos {
     width: auto;
     height: 58px;
-    
+
     font-family: 'Preahvihear', sans-serif;
     font-size: 32px;
     color: var(--brand-color);
@@ -192,16 +207,16 @@ hr {
     font-weight: 500;
     color: var(--white);
 }
+
 .pessoal_info {
     width: auto;
-    height: 96px;
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     line-height: 160%;
     color: var(--white);
 }
 
-.redes_icons{
+.redes_icons {
     width: 100%;
     height: 24px;
     display: flex;
@@ -211,31 +226,31 @@ hr {
 
 
 /* Experiências */
-.experiencias{
+.experiencias {
     width: 100%;
-    height: 537px;
+    height: auto;
 
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
 
-.titulo_experiencia{
-    color:var(--brand-color);
+.titulo_experiencia {
+    color: var(--brand-color);
 }
 
-.my_experience{
+.my_experience {
     display: flex;
 }
 
-.locais{
+.locais {
     width: 100%;
     height: 200px;
     display: flex;
     flex-direction: column;
 }
 
-.local{
+.local {
     width: 100%;
     height: 55px;
 
@@ -243,25 +258,26 @@ hr {
     font-size: 18px;
     font-weight: 500;
     line-height: 100%;
-    letter-spacing: 0%; 
+    letter-spacing: 0%;
     cursor: pointer;
     color: var(--white);
     padding: 12px;
 }
 
-.local:hover,.local:active{
+.local:hover,
+.local:active {
     border-left: 2px solid var(--brand-color);
 }
 
-.cabecalho{
+.cabecalho {
     width: 100%;
-    
+
     display: flex;
     justify-content: space-between;
     color: var(--white);
 }
 
-.titulo_exp{
+.titulo_exp {
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     font-weight: 500;
@@ -270,7 +286,7 @@ hr {
     color: var(--white);
 }
 
-.date_exp{
+.date_exp {
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 400;
@@ -279,7 +295,7 @@ hr {
     letter-spacing: 0%;
 }
 
-.lc_exp{
+.lc_exp {
     width: 100%;
     height: 55px;
     padding-top: 12px;
@@ -291,7 +307,7 @@ hr {
     color: var(--brand-color);
 }
 
-.apresentacao_exp{
+.apresentacao_exp {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -302,34 +318,41 @@ hr {
 }
 
 /* Projetos */
-.projetos{
-    width: auto;
-    height: 1330px;
 
+.projects {
+    width: 100%;
+}
+
+.my_projects {
     display: flex;
-    flex-direction: column;
+    gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-.my_projects{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 2rem;
-
+.project {
+    width: 520px;
+    margin-block: 20px;
 }
 
-.project{
-    width: 100%;  
-}
-
-.img_project{
-    width: 100%;
+.img_project {
     height: 200px;
 
-    border: 1px solid hotpink;
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 1.25rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: var(--brand-color);
+    border-left: 2px solid var(--brand-color);
+    border-radius: 4px;
 }
 
-.name_project{
+.name_project {
+    margin-block: 40px 32px;
     font-family: 'Inter', sans-serif;
     font-size: 24px;
     font-weight: 500;
@@ -337,7 +360,7 @@ hr {
     letter-spacing: 0%;
 }
 
-.infors{
+.infors {
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -346,7 +369,8 @@ hr {
     color: var(--white);
 }
 
-.link_project{
+.link_project {
+    margin-block: 24px 40px;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -355,15 +379,20 @@ hr {
     color: var(--brand-color);
 }
 
-.botoes{
-    
+.botoes {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
 }
 
-.btn_acesso_1{
+.btn_acesso_1 {
     width: auto;
     height: 39px;
     padding: 10px 40px;
-    gap: 10px;
+    gap: 24px;
 
     font-family: 'Inter', sans-serif;
     font-size: 16px;
@@ -375,11 +404,11 @@ hr {
     color: var(--white);
 }
 
-.btn_acesso_2{
+.btn_acesso_2 {
     width: auto;
     height: 39px;
     padding: 10px 40px;
-    gap: 10px;
+    gap: 24px;
 
     font-family: 'Inter', sans-serif;
     font-size: 16px;
@@ -392,7 +421,7 @@ hr {
 }
 
 /* Footer */
-footer{
+footer {
     width: 100%;
     height: 100px;
     display: flex;
@@ -400,7 +429,7 @@ footer{
     justify-content: space-between;
 }
 
-h3{
+h3 {
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 500;
@@ -410,6 +439,10 @@ h3{
     color: var(--white);
 }
 
-.simbolo{
+.simbolo {
     color: var(--brand-color);
+}
+
+@media screen and (min-width=768px) and (max-width=1024px){
+    
 }

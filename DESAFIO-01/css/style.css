@@ -79,6 +79,7 @@ input {
     border: 2px solid var(--dark-40);
     border-radius: 8px;
 
+    color: var(--white);
     background-color: var(--dark-30);
 }
 
@@ -151,7 +152,6 @@ section {
     cursor: pointer;
 }
 
-.material-symbols-outlined:hover,
 .material-symbols-outlined.active {
     font-variation-settings:
         'FILL' 10,
