@@ -4,32 +4,28 @@
     box-sizing: border-box;
 }
 
-body{
-    width: 100%;
-    height: 100%;
-}
-
 .container{
-    max-width: 1100px;
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
 }
 
 .content{
+    max-width: 1400px;
     width: 100%;
-    height: auto;
-    padding-block: 40px;
+    padding: 40px ;
 
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 50px;
 }
-
 
 span{
     color: #232323;
     font-family: 'Fondamento', cursive;
-    font-size: 29.32px;
+    font-size: 1.75rem;
     font-weight: 400;
 }
 
@@ -80,10 +76,12 @@ main{
 }
 
 .principal{
-    width: 80%;
+    max-width: 1400px;
+    width: 100%;
 
     display: flex;
     justify-content: center;
+    flex-wrap: wrap-reverse;
     align-items: center;
     gap: 190px;
 
@@ -132,25 +130,29 @@ main{
     }
 
     & .ilustracao-inicio{
-        width: 400px;
+        max-width: 400px;
+        width: 50%;
         height: 535px;
         background-image: url(../images/sushi.png);
         background-repeat: no-repeat;
         background-size: cover;
+        aspect-ratio: 9/16;
     }
 }
 
 .sobre-nos{
-    width: 80%;
+    max-width: 1400px;
+    width: 100%;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 90px;
 
     & .ilustracao-sb-nos{
-        width: 592px;
-        height: 500px;
+        width: 500px;
+        height: 450px;
         background-image: url(../images/sashimi.jpg);
         border-radius: 16px;
     }
@@ -193,8 +195,8 @@ main{
 }
 
 .populares{
-    width: 80%;
-    height: 100%;
+    width: 100%;
+    height: auto;
     
 
     display: flex;
@@ -204,10 +206,14 @@ main{
     align-items: center;
 
     & .cards{
+        max-width: 1400px;
+
+
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 10rem;
         
     }
 
@@ -224,11 +230,11 @@ main{
     }
     
     & .card{
-        width: 384px;
         position: relative;
-        height: 434px;
+        height: auto;
 
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
 
@@ -238,8 +244,8 @@ main{
             position: absolute;
             top: -114px;
             align-items: center;
-            width: 300px;
-            height: 300px;
+            width: 18rem;
+            height: 18rem;
             background-size: cover;
             
         }
@@ -250,8 +256,8 @@ main{
             position: absolute;
             top: -114px;
             align-items: center;
-            width: 300px;
-            height: 300px;
+            width: 18rem;
+            height: 18rem;
             background-size: cover;
             
         }
@@ -262,14 +268,15 @@ main{
             position: absolute;
             top: -114px;
             align-items: center;
-            width: 300px;
-            height: 300px;
+            width: 18rem;
+            height: 18rem;
             background-size: cover;
             
         }
 
         & .preparo{
-            width: 344px;
+            max-width: 300px;
+            width: 100%;
             height: 434px;
             border-radius: 16px;
             gap: 35px;
@@ -335,8 +342,9 @@ main{
 }
 
 .comentarios{
-    width: 80%;
-    height: 100%;
+    max-width: 1400px;
+    width: 100%;
+    height: auto;
     
     display: flex;
     flex-direction: column;
@@ -349,7 +357,7 @@ main{
     width: 229px;
     height: 58px;
     font-family: 'Lora', serif;
-    font-size: 48px;
+    font-size: 3rem;
     font-weight: 400;
     line-height: 120%;
     letter-spacing: 0%;
@@ -358,21 +366,25 @@ main{
 }
 
 .feedbacks{ 
+    max-width: 1400px;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;  
     gap: 32px;  
 }
 
 .card-feed{
-    width: 592px;
-    height: 390px;
+    max-width: 562px;
+    width: 80%;
+    height: auto;
     background-color: #F8F5F2;
     border-radius: 16px;
     
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    /* justify-content: center; */
    
 }
 
@@ -398,7 +410,7 @@ main{
 }
 
 .info-pessoal{
-    width: 90%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     margin: 0 32px;
@@ -410,17 +422,17 @@ main{
     height: 38px;
     font-family: 'Lora', serif; 
     font-weight: 400;
-    font-size: 32px;
+    font-size: 1.75rem;
     line-height: 120%;
     letter-spacing: 0%;
 }
 
 .info-pessoal p{
-    width: 492px;
-    height: 76px;
+    width: auto;
+    height: 100;
     font-family: 'Poppins', sans-serif; 
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 160%;
     letter-spacing: 0%;
 }
@@ -446,15 +458,20 @@ main{
 }
 
 footer{
+    max-width: 1400px;
     width: 80%;
-    height: 200px;
+    height: auto;
+
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
-    gap: 226px;
+    justify-content: space-evenly;
+    gap: 50px;
 }
 
 footer ul{
     display: flex;
+    
     flex-direction: column;
     gap: 32px;
     list-style: none;
@@ -484,8 +501,11 @@ ul li{
 }
 
 .rodape_redes{
+    max-width: 1400px;
+    min-width: 300px;
     width: 80%;
-    
+    flex-wrap: wrap;
+
     margin-bottom: 60px;
     display: flex;
     justify-content: space-between;
@@ -497,8 +517,8 @@ ul li{
 }
 
 .corpo_logo{
-    width: 34px;
-    height: 34px;
+    width: 2rem;
+    height: 2rem;
 
     display: flex;
     align-items: center;
