@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --brand-color-purple:#8958FF;
+    --color-paper: #FFE3BD;
+    --dark-10:#000014;
+    --white:#FFFFFF;
+}
+
+body{
+    background: var(--dark-10);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card{
+    aspect-ratio: 1/1;
+    width: 100%;
+    border-radius: 12px;
+    position: relative;
+    transition: all 400ms ease;
+    transform-style: preserve-3d;
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+}
+
+.front{
+    background: var(--color-paper);
+    transform: rotateY(180deg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.back{
+    background: var(--brand-color-purple);
+    background-image: url(../imgs/abobora02.png);
+    backface-visibility: hidden;
+}
+
+.reveal-card{
+    transform: rotateY(180deg);
+}
+
