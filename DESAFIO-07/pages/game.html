@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../imgs/abobora01.png">
     <link rel="stylesheet" href="../css/gameStyle.css">
-    
-    
+
+
 
     <title>Jogo da Memória</title>
 </head>
+
 <body>
-    <h1>Página do jogo</h1>
+    <header>
+        <h1>Página do jogo</h1>
+    </header>
 
-    <div class="grid">
-        
-      
+    <div class="grid"></div>
+
+    <div class="mensagem_finishGame" id="finishGame">
+        <div class="teia"></div>
+            <div class="header_parabens">
+                <h1 class="buuh_finish">Buuh!</h1>
+            </div>
+
+            <p class="mensagem">Parabéns! Você completou este jogo da memória.
+                Que tal experimentar uma dificuldade diferente ou jogar novamente na mesma dificuldade?</p>
+
+            <button class="again_game">Jogar Novamente</button>
     </div>
-
     <script src="../js/game.js"></script>
 </body>
+
 </html>
