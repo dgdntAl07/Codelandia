@@ -26,8 +26,10 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
+    const finishMensage = document.getElementById('finishGame');
+
     if (disabledCards.length === 18){
-        Aler('Parabens, você conseguiu!!!');
+        finishMensage.style.display = 'flex';
     };
 };
 
@@ -115,4 +117,6 @@ const loadGame = () => {
 
 };
 
-loadGame();
+window.onload = () => {
+    loadGame();
+}
