@@ -1,5 +1,7 @@
+//Seleciona o elemento HTML pela classe (.grid) que vai exibir as cartas 
 const grid = document.querySelector('.grid');
 
+/// Array usado para carregar as imagens das cartas ///
 const characters =[
     'abobora01',
     'abobora02',
@@ -12,26 +14,29 @@ const characters =[
     'abobora09',
 ];
 
-const createElement = (tag, className) => {
 
+const createElement = (tag, className) => {
     const element = document.createElement(tag);
     element.className = className;
     return element;
-
 };
 
+/// Variaveis Globais das cartas ///
 let firstCard = '';
 let secondCard = '';
 
+/// Verificação para finalizar o jogo ///
 const checkEndGame = () => {
+    //Seleciona todas as cartas desativadas (pares encontrados)
     const disabledCards = document.querySelectorAll('.disabled-card');
-
     const finishMensage = document.getElementById('finishGame');
 
+    //Se todas as cartas estiverem desativadas, mostra a mensagem final
     if (disabledCards.length === 18){
         finishMensage.style.display = 'flex';
     };
 };
+
 
 const checkCards = () => {
     const firstCharacter = firstCard.getAttribute('data-character');
@@ -94,7 +99,8 @@ const createCard = (character) => {
     card.appendChild(back);
 
     back.textContent = "Buuh!";
-
+    back.style.fontSize = '2rem';
+    
     card.addEventListener('click', revealCard);
     card.setAttribute('data-character', character);
 
@@ -102,10 +108,10 @@ const createCard = (character) => {
     
 };
 
-
+///  ///
 const loadGame = () => {
-
-    const duplicateCharacters = [ ... characters, ... characters];
+    /// Criar uma cópia dos personagens para formar os pares
+    const duplicateCharacters = [ ... characters, ... characters]; 
 
     const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
 
@@ -117,6 +123,7 @@ const loadGame = () => {
 
 };
 
+/// Quando a página terminar de carregar, chama a função para montar o tabuleiro ///
 window.onload = () => {
     loadGame();
 }
