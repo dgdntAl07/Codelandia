@@ -39,13 +39,15 @@ const checkEndGame = () => {
 
 
 const checkCards = () => {
+    // Cada carta criada vai receber o atributo 'data-character'
     const firstCharacter = firstCard.getAttribute('data-character');
     const secondCharacter = secondCard.getAttribute('data-character');
     
     if (firstCharacter === secondCharacter) {
 
-        firstCard.firstChild.classList.add('disabled-card');
-        secondCard.firstChild.classList.add('disabled-card');
+        // Adiciona a classe '.disable-card' ao primeiro elemento filho (somente a frente da carta) //
+        firstCard.firstChild.classList.add('disabled-card'); 
+        secondCard.firstChild.classList.add('disabled-card'); 
 
         firstCard = '';
         secondCard = '';
@@ -70,16 +72,17 @@ const checkCards = () => {
 
 const revealCard = ({target}) => {
 
+    // verifica se o elemento pai do selecionado já tem a classe 'reveal-card'
     if(target.parentNode.className.includes('reveal-card')){
-        return;
+        return; // se já está virada, sai da função e não faz nada
     };
 
     if (firstCard === ''){
-        target.parentNode.classList.add('reveal-card');
-        firstCard = target.parentNode;
+        target.parentNode.classList.add('reveal-card'); // adiciona a classe para virar a carta
+        firstCard = target.parentNode; // guarda a carta na variável global
     } else if (secondCard === ''){
         target.parentNode.classList.add('reveal-card');
-        secondCard = target.parentNode;
+        secondCard = target.parentNode; 
     };
 
     checkCards();
@@ -108,15 +111,18 @@ const createCard = (character) => {
     
 };
 
-///  ///
+/// Duplica os personagens para formar os pares ///
 const loadGame = () => {
     /// Criar uma cópia dos personagens para formar os pares
     const duplicateCharacters = [ ... characters, ... characters]; 
 
+    // Embaralha as cartas 
     const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
 
+    // Percorre a lista já embaralhada e cria uma carta para cada personagem
     shuffledArray.forEach((character) => {
         const card = createCard(character);
+        // Adiciona cada carta criada dentro do tabuleiro (.grid)
         grid.appendChild(card);
 
     });

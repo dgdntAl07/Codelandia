@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Horário Escolar</title>
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <script defer src="js/script.js"></script>
+
+  <style>
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
+      background: #e0e0e0;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+
+    .back-link:hover {
+      background: #d0d0d0;
+    }
+
+    .disciplinas-input {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <a href="pagina-anterior.html" class="back-link">&larr; Voltar</a>
+    </div>
+
+    <h1>Montar Horário Escolar</h1>
+
+    <label for="disciplinas">Disciplinas (separe por vírgulas):</label>
+    <input type="text" id="disciplinas" class="disciplinas-input" placeholder="Matemática, Português, História...">
+
+    <label for="tipoEscola">Tipo de Escola:</label>
+    <select id="tipoEscola">
+      <option value="meio">Meio Período</option>
+      <option value="integral">Tempo Integral</option>
+    </select>
+
+    <button onclick="gerarHorario()">Gerar Tabela</button>
+
+    <div id="tabelaHorario"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
